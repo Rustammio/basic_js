@@ -1,0 +1,6 @@
+body{
+    background-image: url(img/nature-3082832_1280.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1000;
+}
