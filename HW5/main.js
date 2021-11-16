@@ -6,7 +6,7 @@ function createNewUser() {
     let name = prompt('name');
     let lastName = prompt('last name');
     let birth = prompt('enter date');
-    birth = birth.slice(6);
+    // birth = birth.slice(6);
     const newUser = {
         name: name,
         lastName: lastName,
@@ -15,10 +15,12 @@ function createNewUser() {
             return (this.name.slice(0, 1).toUpperCase() + this.lastName.toLowerCase())
         },
         getAge(date) {
-            return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
+            let bDate  = new Date(this.birthday.split(".").reverse().join('-'));
+           return Math.floor( ( (new Date() - bDate) / 1000 / (60 * 60 * 24) ) / 365.25 );
+            // return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
         },
         getPassword() {
-                return (this.name.slice(0, 1).toUpperCase() + this.lastName.toLowerCase() + this.birthday)
+                return (this.name.slice(0, 1).toUpperCase() + this.lastName.toLowerCase() + this.birthday.slice(6))
         }
     }
     result = newUser.getLogin()
