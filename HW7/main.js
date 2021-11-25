@@ -9,4 +9,4 @@ let list = ar.map(function (a){
     return a
 })
 console.log(list)
-ool.insertAdjacentHTML("beforebegin", list.join('  '))
+ool.insertAdjacentHTML("beforeend", list.join('  '))
