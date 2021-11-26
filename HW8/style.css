@@ -1,0 +1,45 @@
+
+.active {
+    border-color: greenyellow;
+}
+.done{
+    background-color: green;
+}
+.undone{
+    border-color: red;
+}
+#price {
+    width: 400px;
+    height: 100px;
+    outline: none;
+}
+
+.span{
+    display: flex;
+    height: 40px;
+    width: 200px;
+    margin: 0;
+    position: relative;
+}
+button{
+    width: 25px;
+    height: 25px;
+    margin-left: 3px;
+    background-color: red;
+}
+h1{
+    color: red;
+}
+
+/*.span:after{*/
+/*    content: "";*/
+/*    display: block;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background: url('img/Flat_cross_icon.svg.png');*/
+/*    background-size: contain;*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    cursor: pointer;*/
+
+/*}*/
