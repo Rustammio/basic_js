@@ -21,11 +21,13 @@ priceInp.addEventListener('mouseout', function () {
     if (priceInp.value > 0 ){
         createElement()
         priceInp.classList.add('done')
-    }else {
+    }else if (priceInp >= 0 ){
         priceInp.classList.add('undone')
         let warning = document.createElement('h1')
         warning.innerHTML = 'Please enter correct price';
         document.body.append(warning)
+    } else {
+
     }
 });
 
