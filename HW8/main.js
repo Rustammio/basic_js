@@ -3,9 +3,12 @@ priceInp.addEventListener('mouseover', function () {
     priceInp.classList.add('active')
 })
 const prise = document.createElement('span');
+let warning = document.createElement('h1')
 const but = document.createElement('button')
 but.addEventListener('click', function () {
-    prise.innerHTML = ''
+    // prise.innerHTML = ''
+    document.body.removeChild(prise)
+    priceInp.classList.remove('active', 'done')
 })
 but.innerHTML ='X'
 let createElement = function () {
@@ -15,6 +18,9 @@ let createElement = function () {
     prise.insertAdjacentElement('beforeend',but)
     event.stopPropagation()
     priceInp.value = ''
+    warning.remove()
+    priceInp.classList.remove('undone')
+
 }
 priceInp.addEventListener('mouseout', function () {
     priceInp.classList.remove('active')
@@ -23,7 +29,7 @@ priceInp.addEventListener('mouseout', function () {
         priceInp.classList.add('done')
     }else {
         priceInp.classList.add('undone')
-        let warning = document.createElement('h1')
+        priceInp.classList.remove('active', 'done')
         warning.innerHTML = 'Please enter correct price';
         document.body.append(warning)
     }
