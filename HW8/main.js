@@ -1,5 +1,5 @@
 let priceInp = document.querySelector('input');
-priceInp.addEventListener('mouseover', function () {
+priceInp.addEventListener('onfocus', function () {
     priceInp.classList.add('active')
 })
 const prise = document.createElement('span');
