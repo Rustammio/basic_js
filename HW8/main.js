@@ -22,7 +22,7 @@ let createElement = function () {
     priceInp.classList.remove('undone')
 
 }
-priceInp.addEventListener('mouseout', function () {
+priceInp.addEventListener('blur', function () {
     priceInp.classList.remove('active')
     if (priceInp.value > 0 ){
         createElement()
