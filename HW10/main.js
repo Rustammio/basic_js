@@ -21,7 +21,7 @@ function slash(event) {
 }
 
 function slash1(event) {
-
+    event.preventDefault()
     if (i1.classList.contains('fa-eye')) {
         i1.classList.remove('fa-eye')
         i1.classList.add('fa-eye-slash')
@@ -34,6 +34,7 @@ function slash1(event) {
 
 }
 function press (event) {
+    event.preventDefault()
     if (((pas.value !== '') && (pas1.value !== '')) && (pas.value === pas1.value)) {
         alert('You are welcome')
     }else {
