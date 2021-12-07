@@ -1,6 +1,5 @@
 const wrapper = document.querySelector('.images-wrapper')
 const img = document.querySelectorAll('.image-to-show')
-// console.log(img, wrapper)
 const btnPause = document.createElement('button')
 btnPause.innerHTML = 'Прекратить'
 btnPause.classList.add('btn')
@@ -8,23 +7,32 @@ const btnReturn = document.createElement('button')
 btnReturn.classList.add('btn')
 btnReturn.innerHTML = 'Возобновить показ'
 document.body.append(btnPause, btnReturn)
-
 img.forEach(function (element) {
     element.style.display = 'none'
 })
+let timer;
 let c = 0
 function change() {
     img[c].style.display = 'block'
     c += 1
-
 }
-const ti = setInterval(change, 1000)
+const ti = setInterval(change, 3000)
 btnPause.addEventListener('click',function () {
     clearInterval(ti)
 })
 btnReturn.addEventListener('click', function () {
-    setInterval(change, 1000)
+    setInterval(change, 3000)
 })
+// let a = 3
+// back()
+// function back() {
+//     document.getElementById('back').innerHTML = a;
+//     a--;
+//     if (a <0 ){
+//         clearTimeout(timer)
+//     }
+//    timer = setTimeout(back, 1000)
+// }
 
 
 /*let time =*/
