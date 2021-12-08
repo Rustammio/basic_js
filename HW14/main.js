@@ -1,19 +1,9 @@
-$('.paralax').before('<button>hide</button>')
-$(document).on('click', 'button.paralax', function(){
-    $('.paralax').slideToggle(2000)
-})
-
-
-
-
-
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-
         let dropdowns = document.getElementsByClassName("dropdown-content");
         let i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -34,9 +24,23 @@ $(document).ready(function () {
 });
 
 
-// $(function () {
-//     $('a').on('click', function (e) {
-//         $('html, body').animate({
-//             scrollTop: $((this).attr('href').text())
-//         })
-//     })
+$(document).ready(function(){
+  $('.hide').on("click", function(){
+      $('.paralax').toggle('hidden');
+  })
+})
+$('#top').hide()
+$(window).scroll(function () {
+
+    if ($(window).scrollTop() < 500){
+        $('#top').hide();
+    } if ($(window).scrollTop() > 500){
+        $('#top').show();
+    }
+})
+$('#top').ready(function () {
+    $('#top').on('click', function (){
+        $('body,html').animate({scrollTop: 0}, 2000)
+    }
+    )
+})
