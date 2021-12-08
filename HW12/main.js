@@ -1,4 +1,3 @@
-const wrapper = document.querySelector('.images-wrapper')
 const img = document.querySelectorAll('.image-to-show')
 const btnPause = document.createElement('button')
 btnPause.innerHTML = 'Прекратить'
@@ -10,19 +9,35 @@ document.body.append(btnPause, btnReturn)
 img.forEach(function (element) {
     element.style.display = 'none'
 })
-let timer;
 let c = 0
+
 function change() {
-    img[c].style.display = 'block'
+    img[c].style.display = 'none'
     c += 1
+    if (c === img.length) {
+        c = 0
+    }
+    img[c].style.display = 'block'
+
 }
+
 const ti = setInterval(change, 3000)
-btnPause.addEventListener('click',function () {
+btnPause.addEventListener('click', function () {
     clearInterval(ti)
 })
 btnReturn.addEventListener('click', function () {
     setInterval(change, 3000)
 })
+
+
+// let timerId = setInterval(function () {
+//     img[i].style.display = 'none'
+//     i++
+//     if (i === img.length) {
+//         i = 0
+//     }
+//     img[i].style.display = 'block'
+// }, 3000)
 // let a = 3
 // back()
 // function back() {
