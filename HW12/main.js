@@ -9,14 +9,14 @@ document.body.append(btnPause, btnReturn)
 img.forEach(function (element) {
     element.style.display = 'none'
 })
+img[0].style.display ='block'
 let c = 0
 
 function change() {
+
     img[c].style.display = 'none'
-    if (img[c] === 0){
-        img[c].style.display = 'block'
-    }
     c += 1
+
     if (c === img.length) {
         c = 0
     }
@@ -24,15 +24,72 @@ function change() {
 
 }
 
-const ti = setInterval(change, 3000)
+let ti = setInterval(change, 3000)
 btnPause.addEventListener('click', function () {
     clearInterval(ti)
     btnReturn.removeAttribute('disabled')
 })
 btnReturn.addEventListener('click', function () {
-    setInterval(ti)
+    clearInterval(ti)
+    ti = setInterval(change, 3000)
     btnReturn.setAttribute('disabled', '')
 })
+// function Timer(fn, t) {
+//     var timerObj = setInterval(fn, t);
+//
+//     this.stop = function() {
+//         if (timerObj) {
+//             clearInterval(timerObj);
+//             timerObj = null;
+//         }
+//         return this;
+//     }
+//
+//     // start timer using current settings (if it's not already running)
+//     this.start = function() {
+//         if (!timerObj) {
+//             this.stop();
+//             timerObj = setInterval(fn, t);
+//         }
+//         return this;
+//     }
+//
+//     // start with new or original interval, stop current interval
+//     this.reset = function(newT = t) {
+//         t = newT;
+//         return this.stop().start();
+//     }
+// }
+// var timer = new Timer(function() {
+//     // your function here
+// }, 5000);
+//
+//
+// // switch interval to 10 seconds
+// timer.reset(10000);
+//
+// // stop the timer
+// timer.stop();
+//
+// // start the timer
+// timer.start();
+// // btnPause.addEventListener('click', function () {
+// //   timer.stop();
+// //     btnReturn.removeAttribute('disabled')
+// // })
+// // btnReturn.addEventListener('click', function () {
+// //     timer.start();
+// //     btnReturn.setAttribute('disabled', '')
+// // })
+//
+//
+
+
+
+
+
+
+
 
 
 // let timerId = setInterval(function () {
