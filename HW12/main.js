@@ -27,12 +27,12 @@ function change() {
 let ti = setInterval(change, 3000)
 btnPause.addEventListener('click', function () {
     clearInterval(ti)
-    btnReturn.removeAttribute('disabled')
+
 })
 btnReturn.addEventListener('click', function () {
     clearInterval(ti)
     ti = setInterval(change, 3000)
-    btnReturn.setAttribute('disabled', '')
+
 })
 // function Timer(fn, t) {
 //     var timerObj = setInterval(fn, t);
