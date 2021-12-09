@@ -13,6 +13,9 @@ let c = 0
 
 function change() {
     img[c].style.display = 'none'
+    if (img[c] === 0){
+        img[c].style.display = 'block'
+    }
     c += 1
     if (c === img.length) {
         c = 0
@@ -24,9 +27,11 @@ function change() {
 const ti = setInterval(change, 3000)
 btnPause.addEventListener('click', function () {
     clearInterval(ti)
+    btnReturn.removeAttribute('disabled')
 })
 btnReturn.addEventListener('click', function () {
-    setInterval(change, 3000)
+    setInterval(ti)
+    btnReturn.setAttribute('disabled', '')
 })
 
 
