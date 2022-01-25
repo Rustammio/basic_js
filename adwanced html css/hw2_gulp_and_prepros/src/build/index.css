@@ -9,11 +9,7 @@ html, body {
 }
 
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 80%;
   margin: 0 auto;
@@ -23,14 +19,8 @@ html, body {
 }
 .navbar__list {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 .navbar__list__item {
@@ -54,10 +44,7 @@ html, body {
 .picture {
   max-width: 1170px;
   margin: 0 auto;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -o-object-fit: cover;
   object-fit: cover;
   padding: 15px;
 }
@@ -82,39 +69,23 @@ html, body {
 }
 
 .disc {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   max-width: 1200px;
   padding: 15px;
   margin: 0 auto;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .disc__sub-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 50%;
   flex: 0 1 50%;
   margin-bottom: 5%;
 }
 .disc__sub-section__img {
   width: 160px;
   height: 140px;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .disc__sub-section__paragraph {
@@ -153,36 +124,19 @@ footer {
 }
 
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .footer__section-info__title {
   text-transform: uppercase;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 50px;
 }
 .footer__section-info__sub-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 60%;
   margin: 0 auto;
@@ -223,26 +177,15 @@ footer {
     margin: 20px auto;
   }
   .footer__contacts {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
   }
 }
 @media (max-width: 500px) {
-  html, body {
-    width: 100%;
-  }
-
   .header {
     width: 100%;
     margin: 20px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
   }
@@ -257,7 +200,6 @@ footer {
     height: 300px;
     background-color: #F5F5F5;
     z-index: 0;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .header:before.active {
@@ -277,17 +219,13 @@ footer {
     background-color: black;
   }
   .navbar__burger.active:before {
-    -webkit-transform: translateX(-50%) rotate(45deg);
     transform: translateX(-50%) rotate(45deg);
     bottom: 50%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__burger.active:after {
-    -webkit-transform: translateX(-50%) rotate(-45deg);
     transform: translateX(-50%) rotate(-45deg);
     bottom: 50%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__burger.active span {
@@ -301,7 +239,6 @@ footer {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
   .navbar__burger:before {
@@ -314,9 +251,7 @@ footer {
     position: absolute;
     bottom: 65%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__burger:after {
@@ -329,58 +264,38 @@ footer {
     position: absolute;
     bottom: 35%;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__list {
     position: absolute;
     left: 55%;
     top: -1100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
     width: 200px;
     height: 300px;
     padding: 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    transition: all 3s ease;
   }
   .navbar__list.active {
     top: 70%;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__list__item {
     height: 14.2857142857%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: #F5F5F5;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding-left: 15px;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .navbar__list__item:hover {
     background-color: #E5E5E5;
   }
   .disc__sub-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
   .disc__sub-section__separator {
@@ -412,12 +327,7 @@ footer {
     margin: 20px auto;
   }
   .footer__contacts {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
     font-family: Roboto, sans-serif;
