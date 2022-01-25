@@ -1,4 +1,3 @@
-
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     clean = require('gulp-clean'),
@@ -7,24 +6,26 @@ var gulp = require('gulp'),
     jsMinify = require('gulp-js-minify'),
     sass = require('gulp-sass')(require('sass')),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    changed = require('gulp-changed');
 
-var changed = require('gulp-changed');
 
-let projectFolder = './dist';
-let sourceProject = 'src';
-const sassDir = function () {
+function sassDir() {
     return gulp.src(`src/scss/*.scss`)
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/css/'));
 }
+function clear() {
+    return gulp.src('./dist/css/*')
+        .pipe(clean())
 
-gulp.task('scss', sassDir)
-gulp.task('watch', function () {
-    gulp.watch(`${sourceProject}/scss/*.scss`, sassDir)
-})
-gulp.task('default', () => {
+}
+function img() {
     gulp.src('src/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
-});
+}
+gulp.task('scss', sassDir)
+gulp.task('w', function () {
+    gulp.watch(`./src/scss/*.scss`, gulp.series(clear, sassDir))
+})

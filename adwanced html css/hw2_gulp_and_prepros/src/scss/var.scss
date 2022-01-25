@@ -1,0 +1,50 @@
+@mixin nav{
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #4E4E4E;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+@mixin text{
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #5C5C5C;
+}
+@mixin span{
+  margin-top: 0;
+  font-family: Roboto sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7C7C7C;
+}
+@mixin paragraph{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4E4E4E;
+}
+
+@mixin center{
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+}
+@mixin footer{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: #B9B9B9;
+}
