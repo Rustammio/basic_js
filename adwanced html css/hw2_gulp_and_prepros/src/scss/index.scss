@@ -1,6 +1,377 @@
-body {
- &__the{
-   &other{}
+@import 'var.scss';
 
- }
+html, body {
+  margin: 0 auto;
+  font-family: Roboto, sans-serif;
+
 }
+
+.header {
+  width: 100%;
+  margin: 30px auto;
+
+
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+
+  &__burger {
+    display: none;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
+  &__list__item {
+    list-style: none;
+  }
+
+  &__list__item a {
+    @include nav;
+  }
+
+  &__list__item a:hover {
+    color: #57A4A4;
+
+  }
+
+
+}
+
+.picture {
+  max-width: 1170px;
+  margin: 0 auto;
+  justify-content: center;
+  object-fit: cover;
+  padding: 15px;
+
+  img {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.recent {
+  max-width: 1170px;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 1%;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4E4E4E;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+.disc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding: 15px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  &__sub-section {
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 50%;
+    margin-bottom: 5%;
+
+    &__img {
+      width: 160px;
+      height: 140px;
+      object-fit: cover;
+
+    }
+
+    &__paragraph {
+      @include paragraph;
+    }
+
+    &__span {
+      @include span;
+    }
+
+    &__expo {
+      @include text;
+
+    }
+
+    &__separator {
+      margin-left: 5%;
+    }
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  height: 355px;
+
+}
+
+.footer {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__section-info {
+    &__title {
+      text-transform: uppercase;
+      @include center;
+      margin-top: 50px;
+    }
+
+    &__sub-section {
+      @include center;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      @include footer;
+    }
+  }
+
+  &__social {
+    margin: 40px auto;
+  }
+
+  &__contacts {
+
+
+  }
+
+  &__contacts a {
+    @include footer;
+    text-decoration: none;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .disc {
+    display: block;
+  }
+  footer {
+    height: 370px;
+  }
+  .footer {
+
+    &__section-info {
+      &__title {
+        margin-top: 20px;
+      }
+    }
+
+    &__social {
+      margin: 20px auto;
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+
+  }
+  .header:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1100%;
+    right: 15px;
+    width: 200px;
+    height: 300px;
+    background-color: #F5F5F5;
+    z-index: 0;
+    transition: all 0.3s ease;
+    &.active{
+      top: 100%;
+    }
+  }
+  .navbar {
+    width: 95%;
+    margin: 0;
+
+    &__burger {
+      display: block;
+      width: 45px;
+      height: 40px;
+      position: relative;
+
+      left: 45%;
+      background-color: black;
+
+      &.active:before {
+        transform: translateX(-50%) rotate(45deg);
+        bottom: 50%;
+        transition: all 0.3s ease;
+      }
+      &.active:after {
+        transform: translateX(-50%) rotate(-45deg);
+        bottom: 50%;
+        transition: all 0.3s ease;
+      }
+      &.active span{
+        display: none
+      }
+      & span {
+        width: 60%;
+        height: 2px;
+        border-radius: 7px;
+        background-color: white;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+
+      &:before {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 2px;
+        background-color: white;
+        border-radius: 7px;
+        position: absolute;
+        bottom: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s ease;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 2px;
+        background-color: white;
+        border-radius: 7px;
+        position: absolute;
+        bottom: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s ease;
+      }
+    }
+
+    &__list {
+
+      position: absolute;
+      left: 55%;
+      top: -1100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 200px;
+      height: 300px;
+      padding: 0;
+      transition: all 3s ease;
+      &.active {
+        top:70%;
+        transition: all 0.3s ease;
+      }
+      &__item {
+        height: calc(100%/7);
+        display: flex;
+        background-color: #F5F5F5;
+        //justify-content: center;
+        align-items: center;
+        padding-left: 15px;
+        transition: all 0.3s ease;
+        &:hover{
+          background-color:#E5E5E5;
+
+        }
+        & a {
+          //display: none;
+        }
+
+      }
+
+    }
+
+  }
+  .disc {
+    &__sub-section {
+      display: flex;
+      flex-direction: column;
+
+      &__separator {
+        margin: 0;
+      }
+
+      &__paragraph {
+        margin-bottom: 0;
+      }
+
+      &__expo {
+        display: none;
+      }
+    }
+  }
+  .footer {
+
+    &__section-info {
+      &__title {
+        margin-top: 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      &__sub-section {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+
+    &__social {
+      margin: 20px auto;
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+  }
+}
+.show {display:block;}
