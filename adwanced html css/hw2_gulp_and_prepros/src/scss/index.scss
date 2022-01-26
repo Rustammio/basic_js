@@ -17,7 +17,7 @@ html, body {
 .navbar {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 
   &__burger {
@@ -29,7 +29,7 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    padding: 0;
   }
 
   &__list__item {
@@ -192,7 +192,7 @@ footer {
 }
 
 @media (max-width: 500px) {
-  html, body{
+  html, body {
     width: 100%;
   }
   .header {
@@ -214,7 +214,8 @@ footer {
     background-color: #F5F5F5;
     z-index: 0;
     transition: all 0.3s ease;
-    &.active{
+
+    &.active {
       top: 100%;
     }
   }
@@ -236,14 +237,17 @@ footer {
         bottom: 50%;
         transition: all 0.3s ease;
       }
+
       &.active:after {
         transform: translateX(-50%) rotate(-45deg);
         bottom: 50%;
         transition: all 0.3s ease;
       }
-      &.active span{
+
+      &.active span {
         display: none
       }
+
       & span {
         width: 60%;
         height: 2px;
@@ -298,22 +302,26 @@ footer {
       height: 300px;
       padding: 0;
       transition: all 1s ease;
+
       &.active {
-        top:70%;
+        top: 70%;
         transition: all 0.3s ease;
       }
+
       &__item {
-        height: calc(100%/7);
+        height: calc(100% / 7);
         display: flex;
         background-color: #F5F5F5;
         //justify-content: center;
         align-items: center;
         padding-left: 15px;
         transition: all 0.3s ease;
-        &:hover{
-          background-color:#E5E5E5;
+
+        &:hover {
+          background-color: #E5E5E5;
 
         }
+
         & a {
           //display: none;
         }
@@ -379,4 +387,7 @@ footer {
 
   }
 }
-.show {display:block;}
+
+.show {
+  display: block;
+}
