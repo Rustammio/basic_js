@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     clean = require('gulp-clean'),
-    cleanCss = require('gulp-clean-css'),
+    cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
     minifyjs = require('gulp-js-minify'),
     sass = require('gulp-sass')(require('sass')),
@@ -44,6 +44,15 @@ gulp.task('prefix', function(done){
         .pipe(gulp.dest('dist/css/'))
 });
 
+gulp.task('minifycss', () => {
+    return gulp.src('./dist/css/index.css')
+        .pipe(cleanCSS({debug: true}, (details) => {
+            console.log(`${details.name}: ${details.stats.originalSize}`);
+            console.log(`${details.name}: ${details.stats.minifiedSize}`);
+        }))
+        .pipe(clean())
+        .pipe(gulp.dest('dist/css/'));
+});
 gulp.task('scss',gulp.series( sassDir, 'prefix'));
 gulp.task('w', function () {
     gulp.watch(`./src/scss/*.scss`, gulp.series(clear, sassDir))
